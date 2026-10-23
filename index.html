@@ -80,9 +80,12 @@
     transition: transform var(--sc-d-fast) var(--sc-ease-out); }
   .menu-btn:active { transform: scale(0.95); }
   .menu-btn svg { width: 22px; height: 22px; }
+  .bar__gas { height: 48px; width: auto; flex: none; }
   @media (max-width: 960px) {
     .bar__nav, .bar__call { display: none; }
-    .menu-btn { display: inline-flex; }
+    /* phone: Gas Safe mark sits right, beside the menu button */
+    .bar__gas { margin-left: auto; height: 44px; }
+    .menu-btn { display: inline-flex; margin-left: 0; }
     .bar__logo img { height: 40px; }
   }
 
@@ -246,7 +249,7 @@
   .ticket__head span { font-size: var(--sc-t-xs); color: var(--ink-dark-soft); white-space: nowrap; }
   .ticket ol { list-style: none; margin: 0; padding: 0; }
   .ticket li { --on: clamp(0, calc((var(--sc-p, 0) - var(--t)) * 14), 1);
-    display: grid; grid-template-columns: 28px 1fr; gap: 0 var(--sc-3); padding: var(--sc-3) 0; border-bottom: 1px solid var(--paper-2);
+    display: grid; grid-template-columns: 28px 1fr; gap: 0 var(--sc-3); padding: 9px 0; border-bottom: 1px solid var(--paper-2);
     opacity: calc(0.38 + var(--on) * 0.62); }
   .ticket li:first-child { --on: 1; }
   .tick { grid-row: span 2; width: 26px; height: 26px; border-radius: 50%; margin-top: 2px; display: grid; place-items: center;
@@ -261,15 +264,26 @@
   .ticket__foot p { margin: 0; font-size: var(--sc-t-sm); line-height: 1.35; }
   .ticket__foot p b { display: block; font: 800 var(--sc-t-lg)/1.1 var(--sc-font-display); letter-spacing: -0.015em; }
   .ticket__foot .btn { padding: 0.8em 1.2em; font-size: var(--sc-t-sm); }
-  .job__intro { color: #fff; margin-bottom: var(--sc-5); }
-  .job__intro p { margin: var(--sc-3) 0 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
-  .job__intro .h2 { font-size: var(--sc-t-2xl); }
+  .job__intro { color: #fff; margin-bottom: var(--sc-4); }
+  .job__intro p { margin: var(--sc-2) 0 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
+  .job__intro .h2 { font-size: clamp(1.8rem, 1.2rem + 1.8vw, 2.8rem); }
+  .ticket { padding-top: var(--sc-5); }
   @media (max-width: 900px) {
-    .job__grid { grid-template-columns: 1fr; grid-template-rows: auto 1fr; align-content: start; gap: var(--sc-3); padding-block: var(--sc-3); }
-    .job__photos { height: 34svh; }
+    /* bottom padding clears the phone call bar so the ticket's last line stays visible */
+    .job__grid { grid-template-columns: 1fr; grid-template-rows: auto 1fr; align-content: start; gap: var(--sc-3);
+      padding-block: var(--sc-3) calc(78px + env(safe-area-inset-bottom)); }
+    .job__photos { height: 27svh; }
     .job__intro { display: none; }
-    .ticket { padding: var(--sc-4) var(--sc-4) var(--sc-3); }
-    .ticket li { padding: 7px 0; }
+    .ticket { padding: var(--sc-3) var(--sc-4) var(--sc-3); }
+    .ticket__head { padding-bottom: var(--sc-2); }
+    .ticket__head h2 { font-size: var(--sc-t-lg); }
+    .ticket li { padding: 6px 0; }
+  }
+  @media (max-width: 900px) and (max-height: 700px) {
+    .job__photos { height: 20svh; }
+    .ticket__head { display: none; }
+    .ticket li { padding: 4px 0; }
+    .ticket li b { font-size: var(--sc-t-sm); }
     .ticket li small { display: none; }
     .ticket li.is-now small { display: block; }
     .ticket__foot .btn { display: none; }
@@ -435,6 +449,7 @@
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </nav>
+    <img class="bar__gas" src="assets/gas-safe.svg" alt="Gas Safe registered" width="40" height="45">
     <a class="btn btn--flame bar__call" href="tel:+447538951971">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
       07538 951971
@@ -484,7 +499,7 @@
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__copy">
         <h1 id="hero-h">Bathrooms, boilers and heating. <em>Done properly.</em></h1>
-        <p>Gas Safe plumber in Worsley. I take on the whole job, every trade included.</p>
+        <p>Gas Safe plumber in Worsley. Bathroom specialist. I take on the whole job, every trade included.</p>
         <div class="hero__ctas">
           <a class="btn btn--flame" href="tel:+447538951971">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
@@ -496,7 +511,7 @@
       </div>
       <div class="hero__second">
         <p>One call. Every trade. One price.</p>
-        <span>Plumbing, boarding, plastering and tiling, all booked and managed by Jonny.</span>
+        <span>Plumbing, electrics, boarding, plastering and tiling, all booked, managed and signed off by Jonny.</span>
       </div>
     </div>
   </section>
@@ -518,7 +533,7 @@
       </div>
       <div class="trust__item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5V5h6V3.5M8.5 11l2 2 4-4M8.5 17h7"/></svg>
-        <span><b>One price, whole job</b><small>Every trade sorted for you</small></span>
+        <span><b>One price, whole job</b><small>Every trade sorted and signed off</small></span>
       </div>
     </div>
   </section>
@@ -537,10 +552,10 @@
         <article class="feature" id="bathrooms-card">
           <img src="assets/jobe-after.webp" width="1200" height="1600" loading="lazy" style="object-position: 50% 62%" alt="A finished bathroom by Jonny with a freestanding bath, sage green vanity, round mirror and walk-in shower">
           <div class="feature__body">
-            <h3>Bathrooms, start to finish</h3>
-            <p>Designed with you, priced as one job, fitted properly. I bring in the boarders, plasterers and tilers and manage the lot, so you deal with one person.</p>
+            <h3>Bathroom specialist, start to finish</h3>
+            <p>Designed with you, priced as one job, fitted properly. I bring in approved electricians, plasterers and tilers, manage the lot and make sure it’s all signed off properly. You deal with one person.</p>
             <ul class="chips" aria-label="Included in a full bathroom job">
-              <li>Design</li><li>Strip-out</li><li>Plumbing</li><li>Boarding and plastering</li><li>Tiling</li><li>Fit-out</li>
+              <li>Design</li><li>Strip-out</li><li>Plumbing</li><li>Electrics</li><li>Boarding and plastering</li><li>Tiling</li><li>Fit-out</li><li>Sign-off</li>
             </ul>
             <a class="btn btn--flame" href="#bathrooms">See a job start to finish</a>
           </div>
@@ -566,15 +581,15 @@
   </section>
 
   <!-- 3 PEAK: the job ticket, on Job B's real photos -->
-  <section id="bathrooms" class="job" data-sc-act="pin" data-sc-span="4.2" aria-labelledby="job-h">
+  <section id="bathrooms" class="job" data-sc-act="pin" data-sc-span="4.6" aria-labelledby="job-h">
     <div data-sc-stage>
       <div class="sc-wrap job__grid">
         <div class="job__photos">
           <figure style="--t:0"><img src="assets/jobb-before.webp" width="1200" height="1600" alt="The bathroom before: white tiles, an electric shower over the bath"><figcaption>Before</figcaption></figure>
-          <figure style="--t:.2"><img src="assets/jobb-studs.webp" width="1500" height="1125" alt="The same bathroom stripped back to bare stud walls" loading="lazy"><figcaption>Stripped to the studs</figcaption></figure>
-          <figure style="--t:.38"><img src="assets/jobb-insulated.webp" width="1500" height="1125" alt="New studwork with insulation fitted between the timbers" loading="lazy"><figcaption>First fix and insulation</figcaption></figure>
-          <figure style="--t:.56"><img src="assets/jobb-boarded.webp" width="1500" height="1125" alt="Walls boarded and ready for tiling" loading="lazy"><figcaption>Boarded</figcaption></figure>
-          <figure style="--t:.74"><img src="assets/jobb-finished.webp" width="1200" height="1600" alt="The finished bathroom: large grey tiles, a bath with shower, a wall-hung vanity and an LED mirror" loading="lazy"><figcaption>Finished</figcaption></figure>
+          <figure style="--t:.16"><img src="assets/jobb-studs.webp" width="1500" height="1125" alt="The same bathroom stripped back to bare stud walls" loading="lazy"><figcaption>Stripped to the studs</figcaption></figure>
+          <figure style="--t:.32"><img src="assets/jobb-insulated.webp" width="1500" height="1125" alt="New studwork with insulation fitted between the timbers" loading="lazy"><figcaption>First fix and insulation</figcaption></figure>
+          <figure style="--t:.48"><img src="assets/jobb-boarded.webp" width="1500" height="1125" alt="Walls boarded and ready for tiling" loading="lazy"><figcaption>Boarded</figcaption></figure>
+          <figure style="--t:.64"><img src="assets/jobb-finished.webp" width="1200" height="1600" alt="The finished bathroom: large grey tiles, a bath with shower, a wall-hung vanity and an LED mirror" loading="lazy"><figcaption>Finished</figcaption></figure>
         </div>
         <div>
           <div class="job__intro">
@@ -585,10 +600,11 @@
             <div class="ticket__head"><h2 aria-hidden="true">Full-works bathroom</h2><span>Job ticket</span></div>
             <ol>
               <li style="--t:0"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Survey and one price</b><small>Design talked through, every trade costed in. <i>Jonny</i></small></li>
-              <li style="--t:.2"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Strip-out</b><small>Old suite and tiles out, back to the studs. <i>Jonny</i></small></li>
-              <li style="--t:.38"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>First fix plumbing</b><small>New pipework where the new room needs it. <i>Jonny</i></small></li>
-              <li style="--t:.56"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Boarding and plastering</b><small>Walls boarded and made good. <i>Booked and managed by Jonny</i></small></li>
-              <li style="--t:.74"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Tiling, fit-out and handover</b><small>Tiler booked in, suite fitted, tested and tidied. <i>Jonny</i></small></li>
+              <li style="--t:.16"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Strip-out</b><small>Old suite and tiles out, back to the studs. <i>Jonny</i></small></li>
+              <li style="--t:.32"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>First fix plumbing and electrics</b><small>New pipework by Jonny. Lighting, extractor and shaver points by an <i>approved electrician</i></small></li>
+              <li style="--t:.48"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Boarding and plastering</b><small>Walls boarded and made good. <i>Booked and managed by Jonny</i></small></li>
+              <li style="--t:.64"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Tiling and fit-out</b><small>Tiler booked in, suite, shower and fittings in. <i>Jonny</i></small></li>
+              <li style="--t:.8"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Tested and signed off</b><small>Electrics certified by the approved electrician, plumbing tested, room left tidy. <i>Jonny</i></small></li>
             </ol>
             <div class="ticket__foot">
               <p>One contact the whole way<b>Jonny, 07538 951971</b></p>
