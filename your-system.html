@@ -192,6 +192,7 @@
   .talk { background: radial-gradient(42rem 28rem at 100% 0%, #164A9E 0%, transparent 58%), var(--navy); }
   .talk .h2, .talk .lede { color: #fff; }
   .talk .lede { color: #D5E0F2; }
+  .talk .eyebrow { color: #FF7A4D; }
   .lines { list-style: none; margin: var(--sc-7) 0 0; padding: 0; display: grid; gap: var(--sc-3); max-width: 40rem; }
   .lines a { display: flex; align-items: center; gap: var(--sc-4); padding: var(--sc-4); border-radius: var(--sc-r-md); text-decoration: none;
     background: hsl(0 0% 100% / .06); border: 1px solid hsl(0 0% 100% / .12); transition: background-color var(--sc-d-fast), transform var(--sc-d-fast) var(--sc-ease-out); }
@@ -225,9 +226,17 @@
     .tiers__names { grid-template-columns: 1fr; }
     .tiers__names li { padding: var(--sc-4) 0; }
     .tiers__names li + li { border-left: 0; padding-left: 0; border-top: 1px solid hsl(0 0% 100% / .16); }
-    .step { grid-template-columns: 1fr; }
-    .step__why { grid-column: 1; padding: 0.85rem 0 0.15rem var(--rail); }
-    .step__main { grid-column: 1; }
+    .step { grid-template-columns: 1fr; position: relative; }
+    .step__why { grid-column: 1; grid-row: 1; position: relative; z-index: 1;
+      padding: 0.95rem 0 0.35rem var(--rail); }
+    .step__main { grid-column: 1; grid-row: 2; }
+    .step:not(:has(.step__why)) .step__main { grid-row: 1; }
+    /* one rail through the label and the card, so the path does not break */
+    .step__main::before { display: none; }
+    .step::before { content: ""; position: absolute; left: calc(0.95rem - 1px); top: 0; bottom: 0; width: 2px; background: var(--navy); z-index: 0; }
+    .step:first-child::before { top: 1.15rem; }
+    .step:last-child::before { bottom: auto; height: 2rem; }
+    .step__card { position: relative; z-index: 1; }
     .flow__so { display: block; }
     .flow__so span { display: block; padding-left: var(--rail); }
     .diagram__head { margin-bottom: var(--sc-6); }
@@ -376,7 +385,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2l2.4 5.2 5.7.7-4.2 3.9 1.1 5.6L12 16.2 6.9 18.6l1.1-5.6L3.8 9.1l5.7-.7z"/></svg>
             Review Accelerator
           </dt>
-          <dd>After the job, it asks the customer for a Google review. That is there to bring in more 5-star reviews.</dd>
+          <dd>After the job, it asks the customer for a Google review. The point of it is more 5-star reviews.</dd>
         </div>
         <div class="sys__row">
           <dt>
@@ -513,7 +522,7 @@
 
   <section id="talk" class="sc-section talk" aria-labelledby="talk-h">
     <div class="sc-wrap" data-sc-in>
-      <p class="eyebrow" style="color:#FF7A4D">Next</p>
+      <p class="eyebrow">Next</p>
       <h2 class="h2" id="talk-h">If you want to talk it through.</h2>
       <p class="lede">Email me. The website prices are the ones above. The systems are a fixed setup plus a simple monthly plan, priced on a quick call.</p>
       <ul class="lines">
