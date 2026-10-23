@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>No Leaks Plumbing &amp; Heating | Bathrooms, boilers and heating in Worsley</title>
+<meta name="description" content="Gas Safe plumber and heating engineer in Worsley. Full bathroom projects with every trade sorted, boiler replacements, servicing and central heating across Greater Manchester.">
+<meta name="theme-color" content="#0B2F6B">
+<link rel="icon" type="image/png" href="assets/logo-noleaks.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
+<style>
+  :root {
+    /* from the logo: navy lettering, flame orange, water blue */
+    --navy: #0B2F6B; --navy-2: #0F3D87; --navy-deep: #071F49;
+    --flame: #F04A1C; --flame-ink: #C2380B; --water: #0078C0;
+    --paper: #F5F7FB; --paper-2: #E9EEF6; --line: #D5DDEA;
+    --ink-dark: #0D1B33; --ink-dark-soft: #4A5876;
+
+    --sc-canvas: var(--navy); --sc-surface: var(--navy-deep);
+    --sc-ink: #F4F7FC; --sc-ink-soft: #B9C6DE;
+    --sc-accent: var(--flame); --sc-accent-ink: #FFFFFF;
+    --sc-font-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --sc-font-text: "Geist", system-ui, sans-serif;
+    --sc-shadow-color: 218 70% 12%;
+    --bar-h: 72px;
+  }
+  html { scroll-padding-top: calc(var(--bar-h) + 12px); }
+  body { overflow-x: clip; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+
+  /* light ground: restate colour with the tokens (see taste.md) */
+  .ground-light { --sc-ink: var(--ink-dark); --sc-ink-soft: var(--ink-dark-soft); --sc-accent: var(--flame-ink);
+    --sc-hairline: var(--line); color: var(--sc-ink); background: var(--paper); }
+  .ground-white { --sc-ink: var(--ink-dark); --sc-ink-soft: var(--ink-dark-soft); --sc-accent: var(--flame-ink);
+    --sc-hairline: var(--line); color: var(--sc-ink); background: #fff; }
+
+  /* ---------- demo banner ---------- */
+  .demo { background: var(--navy-deep); color: #C9D5EA; font-size: var(--sc-t-xs); text-align: center;
+    padding: 6px var(--sc-gutter); letter-spacing: 0.01em; }
+  .demo b { color: #fff; font-weight: 600; }
+
+  /* ---------- buttons ---------- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55em; white-space: nowrap;
+    font: 600 var(--sc-t-base)/1 var(--sc-font-text); text-decoration: none; border-radius: var(--sc-r-pill);
+    padding: 0.95em 1.45em; border: 1.5px solid transparent; cursor: pointer;
+    transition: transform var(--sc-d-fast) var(--sc-ease-out), background-color var(--sc-d-fast) var(--sc-ease-out), box-shadow var(--sc-d-fast) var(--sc-ease-out); }
+  .btn svg { width: 1.1em; height: 1.1em; flex: none; }
+  .btn--flame { background: var(--flame-ink); color: #fff;
+    box-shadow: 0 1px 2px hsl(14 90% 25% / .3), 0 8px 20px -6px hsl(14 90% 40% / .55), inset 0 1px 0 hsl(20 100% 80% / .35); }
+  .btn--flame:hover { background: #A92F07; }
+  .btn--ghost { border-color: color-mix(in oklab, currentColor 40%, transparent); color: inherit; background: transparent; }
+  .btn--ghost:hover { background: color-mix(in oklab, currentColor 9%, transparent); }
+  .btn--white { background: #fff; color: var(--navy); box-shadow: var(--sc-e2); }
+  .btn--white:hover { background: var(--paper-2); }
+  .btn:active { transform: translateY(1px) scale(0.98); }
+  .btn:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+  .btn[disabled] { opacity: .55; cursor: not-allowed; }
+  @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-1px); } }
+
+  /* ---------- top bar ---------- */
+  .bar { position: sticky; top: 0; z-index: var(--sc-z-chrome); height: var(--bar-h);
+    background: color-mix(in oklab, #fff 94%, transparent); backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid color-mix(in oklab, var(--navy) 10%, transparent); color: var(--ink-dark); }
+  .bar__in { height: 100%; display: flex; align-items: center; gap: var(--sc-5); }
+  .bar__logo { display: block; border-radius: var(--sc-r-sm); }
+  .bar__logo img { height: 46px; width: auto; }
+  .bar__nav { display: flex; gap: var(--sc-5); margin-left: auto; }
+  .bar__nav a { font-weight: 500; font-size: var(--sc-t-sm); text-decoration: none; color: var(--ink-dark-soft);
+    padding: 6px 2px; border-bottom: 2px solid transparent; transition: color var(--sc-d-fast), border-color var(--sc-d-fast); }
+  .bar__nav a:hover { color: var(--navy); border-color: var(--flame); }
+  .bar__nav a:focus-visible, .bar__logo:focus-visible, .menu-btn:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+  .bar__call { padding: 0.75em 1.2em; font-size: var(--sc-t-sm); }
+  .menu-btn { display: none; margin-left: auto; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--line);
+    background: #fff; color: var(--navy); align-items: center; justify-content: center; cursor: pointer;
+    transition: transform var(--sc-d-fast) var(--sc-ease-out); }
+  .menu-btn:active { transform: scale(0.95); }
+  .menu-btn svg { width: 22px; height: 22px; }
+  @media (max-width: 960px) {
+    .bar__nav, .bar__call { display: none; }
+    .menu-btn { display: inline-flex; }
+    .bar__logo img { height: 40px; }
+  }
+
+  /* phone menu */
+  .menu { position: fixed; inset: 0; z-index: 90; background: var(--navy); color: #fff; padding: var(--sc-5) var(--sc-gutter) var(--sc-7);
+    display: flex; flex-direction: column; gap: var(--sc-5); opacity: 0; transform: translateY(-8px); pointer-events: none;
+    transition: opacity var(--sc-d-base) var(--sc-ease-out), transform var(--sc-d-base) var(--sc-ease-out); overflow-y: auto; }
+  .menu.is-open { opacity: 1; transform: none; pointer-events: auto; }
+  .menu__top { display: flex; align-items: center; justify-content: space-between; }
+  .menu__top img { height: 40px; width: auto; }
+  .menu__close { width: 46px; height: 46px; border-radius: 12px; border: 1px solid #ffffff40; background: transparent; color: #fff; cursor: pointer; }
+  .menu__close:focus-visible, .menu nav a:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+  .menu nav { display: flex; flex-direction: column; margin-top: var(--sc-4); }
+  .menu nav a { font: 700 var(--sc-t-xl)/1.1 var(--sc-font-display); text-decoration: none; padding: 0.55em 0; border-bottom: 1px solid #ffffff1f; }
+  .menu nav a:active { color: var(--flame); }
+  .menu__cta { display: grid; gap: var(--sc-3); margin-top: auto; }
+  .menu__cta .btn { width: 100%; }
+
+  /* ---------- HERO: aperture onto a finished room ---------- */
+  .hero { --open: clamp(0, calc((var(--sc-p, 0) - 0.04) / 0.62), 1); --late: clamp(0, calc((var(--sc-p, 0) - 0.58) / 0.3), 1); }
+  .hero [data-sc-stage] { background:
+      radial-gradient(60rem 40rem at 80% 30%, #1B4FA6 0%, transparent 60%),
+      radial-gradient(40rem 30rem at 0% 100%, #071F49 0%, transparent 70%), var(--navy); }
+  .hero__room { position: absolute; inset: 0; z-index: 1;
+    --cx: 70%; --cy: 52%; --r0: min(35vmin, 21rem);
+    clip-path: circle(calc(var(--r0) + var(--open) * 120vmax) at var(--cx) var(--cy)); will-change: clip-path; }
+  .hero__room picture { display: contents; }
+  .hero__room img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;
+    transform: scale(calc(1.2 - var(--open) * 0.2)); transform-origin: var(--cx) var(--cy); will-change: transform; }
+  /* the rim and its warm light: separate plane, grows with the aperture but fades as it leaves the frame */
+  .hero__rim { position: absolute; z-index: 2; left: 70%; top: 52%; width: calc(2 * min(35vmin, 21rem)); aspect-ratio: 1;
+    translate: -50% -50%; border-radius: 50%; pointer-events: none;
+    box-shadow: 0 0 0 2px hsl(30 90% 70% / .55), 0 0 60px 6px hsl(30 100% 65% / .28), inset 0 0 50px hsl(30 100% 70% / .25);
+    transform: scale(calc(1 + var(--open) * 5)); opacity: calc(1 - var(--open) * 1.6); will-change: transform, opacity; }
+  .hero__glow { position: absolute; z-index: 0; left: 70%; top: 52%; width: 70vmin; aspect-ratio: 1; translate: -50% -50%;
+    border-radius: 50%; background: radial-gradient(closest-side, hsl(28 100% 60% / .32), transparent);
+    transform: translate3d(calc(var(--sc-p, 0) * -6vw), calc(var(--sc-p, 0) * 4vh), 0) scale(calc(1 + var(--sc-p, 0) * 0.5)); }
+  .hero__shade { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: var(--late);
+    background: linear-gradient(to top, hsl(220 80% 8% / .86) 0%, hsl(220 80% 8% / .55) 32%, transparent 60%),
+      linear-gradient(to right, hsl(220 80% 8% / .5) 0%, transparent 55%); }
+  .hero__copy { position: absolute; z-index: 4; left: var(--sc-gutter); top: 50%; translate: 0 -46%; max-width: min(36rem, 46vw);
+    transform: translate3d(calc(var(--open) * -4vw), 0, 0); opacity: calc(1 - var(--open) * 3.2); }
+  .hero__copy h1 { font-size: clamp(2.6rem, 1.6rem + 3.6vw, 5.2rem); line-height: 0.98; font-weight: 800; margin: 0 0 var(--sc-5);
+    letter-spacing: -0.035em; text-wrap: balance; }
+  .hero__copy h1 em { font-style: normal; color: #FF7A4D; }
+  .hero__copy p { font-size: var(--sc-t-lg); color: var(--sc-ink-soft); margin: 0 0 var(--sc-6); max-width: 30ch; line-height: 1.45; }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--sc-3); }
+  .hero__ctas .btn--ghost { color: #fff; }
+  .hero__second { position: absolute; z-index: 4; left: var(--sc-gutter); right: var(--sc-gutter); bottom: clamp(2.5rem, 9vh, 6rem);
+    opacity: var(--late); transform: translate3d(0, calc((1 - var(--late)) * 18px), 0); }
+  .hero__second p { font: 800 clamp(2rem, 1.2rem + 3.4vw, 4.6rem)/1 var(--sc-font-display); letter-spacing: -0.035em; margin: 0; color: #fff; text-wrap: balance; max-width: 16ch; }
+  .hero__second span { display: block; margin-top: var(--sc-4); font: 500 var(--sc-t-base)/1.5 var(--sc-font-text); color: #E3EAF6; letter-spacing: 0; max-width: 44ch; }
+  @media (max-width: 760px) {
+    /* phone: headline on top, the circle lower down where the brass tap and sink sit in the portrait photo.
+       The call bar already carries Call and Get a quote, so the hero buttons step aside. */
+    .hero__room { --cx: 50%; --cy: 58%; --r0: 27vw; }
+    .hero__room img { object-position: 8% 50%; }
+    .hero__rim, .hero__glow { left: 50%; top: 58%; }
+    .hero__rim { width: 54vw; }
+    .hero__copy { top: calc(var(--bar-h) + 0.5rem); translate: none; max-width: none; right: var(--sc-gutter); }
+    .hero__ctas { display: none; }
+    .hero__copy h1 { font-size: clamp(2.2rem, 9.6vw, 3rem); margin-bottom: var(--sc-4); }
+    .hero__copy p { font-size: var(--sc-t-base); margin-bottom: var(--sc-5); }
+    .hero__ctas .btn { flex: 1 1 auto; }
+    .hero__second { bottom: calc(6rem + env(safe-area-inset-bottom)); }
+  }
+
+  /* ---------- trust strip ---------- */
+  .trust { border-bottom: 1px solid var(--line); }
+  .trust__in { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .trust__item { display: flex; gap: var(--sc-3); align-items: center; padding: var(--sc-5) var(--sc-4); text-decoration: none; }
+  .trust__item + .trust__item { border-left: 1px solid var(--line); }
+  .trust__item svg { width: 30px; height: 30px; flex: none; color: var(--navy-2); }
+  .trust__item b { display: block; font: 700 var(--sc-t-base)/1.2 var(--sc-font-display); letter-spacing: -0.01em; }
+  .trust__item small { display: block; color: var(--ink-dark-soft); font-size: var(--sc-t-sm); line-height: 1.35; }
+  a.trust__item:hover b { color: var(--flame-ink); }
+  a.trust__item:focus-visible { outline: 3px solid var(--flame); outline-offset: -3px; }
+  .slot { display: inline-block; font-size: 0.78em; font-weight: 600; color: #8A4B00; background: #FFF1DB; border: 1px dashed #E3A24A;
+    border-radius: 4px; padding: 0 5px; }
+  @media (max-width: 900px) {
+    .trust__in { grid-template-columns: 1fr 1fr; }
+    .trust__item:nth-child(3) { border-left: 0; }
+    .trust__item:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
+  @media (max-width: 460px) { .trust__item { padding: var(--sc-4) var(--sc-2); } .trust__item svg { width: 24px; height: 24px; } }
+
+  /* ---------- services ---------- */
+  .eyebrow { font: 600 var(--sc-t-xs)/1 var(--sc-font-text); letter-spacing: 0.12em; text-transform: uppercase; color: var(--flame-ink); margin: 0 0 var(--sc-4); }
+  .h2 { font: 800 var(--sc-t-3xl)/0.98 var(--sc-font-display); letter-spacing: -0.035em; margin: 0; text-wrap: balance; }
+  .h2--md { font-size: var(--sc-t-2xl); line-height: 1.02; }
+  .lede { font-size: var(--sc-t-lg); line-height: 1.5; color: var(--sc-ink-soft); max-width: 46ch; margin: var(--sc-5) 0 0; text-wrap: pretty; }
+  .services__head { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sc-7); align-items: end; margin-bottom: var(--sc-8); }
+  .services__head .lede { margin: 0; }
+  .svc-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: var(--sc-5); }
+  .feature { position: relative; border-radius: var(--sc-r-lg); overflow: hidden; min-height: 34rem; color: #fff; isolation: isolate;
+    box-shadow: 0 2px 4px hsl(218 70% 12% / .10), 0 24px 50px -20px hsl(218 70% 12% / .45); }
+  .feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
+    transition: transform 900ms var(--sc-ease-out); }
+  .feature::before { content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(to top, hsl(220 80% 9% / .92) 0%, hsl(220 80% 9% / .62) 38%, transparent 68%); }
+  .feature__body { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--sc-7) var(--sc-6) var(--sc-6); }
+  .feature h3 { font: 800 var(--sc-t-2xl)/1 var(--sc-font-display); letter-spacing: -0.03em; margin: 0 0 var(--sc-3); }
+  .feature p { margin: 0 0 var(--sc-5); max-width: 44ch; color: #DCE5F3; }
+  .feature .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 var(--sc-5); padding: 0; list-style: none; }
+  .feature .chips li { font-size: var(--sc-t-sm); padding: 5px 12px; border-radius: 999px; background: hsl(0 0% 100% / .14); border: 1px solid hsl(0 0% 100% / .22); }
+  @media (hover: hover) and (pointer: fine) { .feature:hover img { transform: scale(1.03); } }
+  .svc-side { display: grid; grid-template-rows: auto 1fr; gap: var(--sc-5); }
+  .boiler { display: grid; grid-template-columns: 0.9fr 1.1fr; border-radius: var(--sc-r-lg); overflow: hidden; background: #fff;
+    box-shadow: 0 1px 2px hsl(218 70% 12% / .08), 0 12px 30px -14px hsl(218 70% 12% / .28); }
+  .boiler img { width: 100%; height: 100%; object-fit: cover; min-height: 15rem; }
+  .boiler__body { padding: var(--sc-6) var(--sc-5); }
+  .boiler h3, .svc-list h3 { font: 700 var(--sc-t-xl)/1.05 var(--sc-font-display); letter-spacing: -0.02em; margin: 0 0 var(--sc-3); }
+  .boiler p { margin: 0; color: var(--ink-dark-soft); font-size: var(--sc-t-sm); }
+  .boiler blockquote { margin: var(--sc-4) 0 0; padding-left: var(--sc-3); border-left: 1px solid var(--flame); font-size: var(--sc-t-sm); color: var(--ink-dark); }
+  .boiler blockquote cite { display: block; font-style: normal; color: var(--ink-dark-soft); font-size: var(--sc-t-xs); margin-top: 4px; }
+  .svc-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--sc-r-lg);
+    background: #fff; box-shadow: 0 1px 2px hsl(218 70% 12% / .08), 0 12px 30px -14px hsl(218 70% 12% / .28); }
+  .svc-list li { padding: var(--sc-5); border-top: 1px solid var(--line); }
+  .svc-list li:nth-child(-n+2) { border-top: 0; }
+  .svc-list li:nth-child(even) { border-left: 1px solid var(--line); }
+  .svc-list h3 { font-size: var(--sc-t-lg); display: flex; align-items: center; gap: 10px; }
+  .svc-list h3 svg { width: 22px; height: 22px; color: var(--flame-ink); flex: none; }
+  .svc-list p { margin: 0; font-size: var(--sc-t-sm); color: var(--ink-dark-soft); line-height: 1.5; }
+  @media (max-width: 960px) {
+    .services__head, .svc-grid { grid-template-columns: 1fr; }
+    .services__head { gap: var(--sc-4); margin-bottom: var(--sc-6); }
+    .feature { min-height: 30rem; }
+  }
+  @media (max-width: 560px) {
+    .boiler { grid-template-columns: 1fr; } .boiler img { min-height: 0; aspect-ratio: 4/3; }
+    /* phone: photo on top, copy on navy below, so the text never sits on a bright mirror */
+    .feature { min-height: 0; background: var(--navy); }
+    .feature::before { display: none; }
+    .feature img { position: relative; aspect-ratio: 4/3; height: auto; }
+    .feature__body { position: relative; padding-top: var(--sc-5); }
+    .svc-list { grid-template-columns: 1fr; }
+    .svc-list li:nth-child(2) { border-top: 1px solid var(--line); }
+    .svc-list li:nth-child(even) { border-left: 0; }
+    .feature__body { padding: var(--sc-6) var(--sc-5) var(--sc-5); }
+  }
+
+  /* ---------- JOB TICKET (peak) ---------- */
+  .job [data-sc-stage] { background: radial-gradient(50rem 40rem at 15% 20%, #154494 0%, transparent 65%), var(--navy-deep);
+    padding-top: var(--bar-h); }
+  .job__grid { height: 100%; display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 4vw, 4.5rem); align-items: center;
+    padding-block: clamp(1rem, 4vh, 3rem); }
+  .job__photos { position: relative; height: min(76svh, 46rem); border-radius: var(--sc-r-lg); overflow: hidden; background: #0A2552;
+    box-shadow: 0 4px 8px hsl(220 80% 4% / .3), 0 30px 70px -20px hsl(220 80% 4% / .7); }
+  .job__photos figure { position: absolute; inset: 0; margin: 0;
+    opacity: clamp(0, calc((var(--sc-p, 0) - var(--t)) * 14), 1); }
+  .job__photos figure:first-child { opacity: 1; }
+  .job__photos img { width: 100%; height: 100%; object-fit: cover; }
+  .job__photos figcaption { position: absolute; left: 14px; bottom: 14px; font: 600 var(--sc-t-xs)/1 var(--sc-font-text); letter-spacing: 0.08em;
+    text-transform: uppercase; color: #fff; background: hsl(220 80% 8% / .72); padding: 8px 12px; border-radius: 999px; backdrop-filter: blur(6px); }
+  .ticket { background: #FBFCFE; color: var(--ink-dark); border-radius: var(--sc-r-lg); padding: var(--sc-6) var(--sc-6) var(--sc-5);
+    box-shadow: 0 2px 4px hsl(220 80% 4% / .25), 0 26px 60px -22px hsl(220 80% 4% / .75); position: relative; }
+  .ticket::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; border-radius: var(--sc-r-lg) var(--sc-r-lg) 0 0;
+    background: linear-gradient(90deg, var(--flame) 0 calc(var(--sc-p, 0) * 100%), var(--paper-2) 0); }
+  .ticket__head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sc-4); border-bottom: 1px dashed var(--line); padding-bottom: var(--sc-4); }
+  .ticket__head h2 { font: 800 var(--sc-t-xl)/1.05 var(--sc-font-display); letter-spacing: -0.02em; margin: 0; }
+  .ticket__head span { font-size: var(--sc-t-xs); color: var(--ink-dark-soft); white-space: nowrap; }
+  .ticket ol { list-style: none; margin: 0; padding: 0; }
+  .ticket li { --on: clamp(0, calc((var(--sc-p, 0) - var(--t)) * 14), 1);
+    display: grid; grid-template-columns: 28px 1fr; gap: 0 var(--sc-3); padding: var(--sc-3) 0; border-bottom: 1px solid var(--paper-2);
+    opacity: calc(0.38 + var(--on) * 0.62); }
+  .ticket li:first-child { --on: 1; }
+  .tick { grid-row: span 2; width: 26px; height: 26px; border-radius: 50%; margin-top: 2px; display: grid; place-items: center;
+    border: 2px solid var(--line); background: #fff; position: relative; }
+  .tick::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; background: var(--flame-ink); opacity: var(--on);
+    transform: scale(calc(0.6 + var(--on) * 0.4)); }
+  .tick svg { width: 14px; height: 14px; color: #fff; position: relative; z-index: 1; opacity: var(--on); }
+  .ticket li b { font: 700 var(--sc-t-base)/1.25 var(--sc-font-display); letter-spacing: -0.01em; }
+  .ticket li small { font-size: var(--sc-t-sm); color: var(--ink-dark-soft); line-height: 1.4; }
+  .ticket li small i { font-style: normal; font-weight: 600; color: var(--navy-2); }
+  .ticket__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--sc-4); flex-wrap: wrap; padding-top: var(--sc-4); }
+  .ticket__foot p { margin: 0; font-size: var(--sc-t-sm); line-height: 1.35; }
+  .ticket__foot p b { display: block; font: 800 var(--sc-t-lg)/1.1 var(--sc-font-display); letter-spacing: -0.015em; }
+  .ticket__foot .btn { padding: 0.8em 1.2em; font-size: var(--sc-t-sm); }
+  .job__intro { color: #fff; margin-bottom: var(--sc-5); }
+  .job__intro p { margin: var(--sc-3) 0 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
+  .job__intro .h2 { font-size: var(--sc-t-2xl); }
+  @media (max-width: 900px) {
+    .job__grid { grid-template-columns: 1fr; grid-template-rows: auto 1fr; align-content: start; gap: var(--sc-3); padding-block: var(--sc-3); }
+    .job__photos { height: 34svh; }
+    .job__intro { display: none; }
+    .ticket { padding: var(--sc-4) var(--sc-4) var(--sc-3); }
+    .ticket li { padding: 7px 0; }
+    .ticket li small { display: none; }
+    .ticket li.is-now small { display: block; }
+    .ticket__foot .btn { display: none; }
+  }
+
+  /* ---------- before / after ---------- */
+  .ba { display: grid; grid-template-columns: 1fr 1.35fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+  .ba > * { min-width: 0; }
+  .ba__tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: var(--sc-6) 0 var(--sc-5); padding: 0; list-style: none; }
+  .ba__tabs button { font: 600 var(--sc-t-sm)/1 var(--sc-font-text); padding: 0.75em 1.1em; border-radius: 999px; cursor: pointer;
+    border: 1.5px solid var(--line); background: #fff; color: var(--ink-dark);
+    transition: background-color var(--sc-d-fast), border-color var(--sc-d-fast), transform var(--sc-d-fast) var(--sc-ease-out); }
+  .ba__tabs button:hover { border-color: var(--navy-2); }
+  .ba__tabs button:active { transform: scale(0.97); }
+  .ba__tabs button:focus-visible { outline: 3px solid var(--flame); outline-offset: 2px; }
+  .ba__tabs button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .ba__note { font-size: var(--sc-t-sm); color: var(--ink-dark-soft); margin: 0; }
+  .compare { --x: 50%; position: relative; aspect-ratio: 4 / 5; max-height: 78svh; width: 100%; border-radius: var(--sc-r-lg); overflow: hidden;
+    user-select: none; touch-action: pan-y; background: var(--paper-2); justify-self: center;
+    box-shadow: 0 2px 4px hsl(218 70% 12% / .12), 0 30px 60px -24px hsl(218 70% 12% / .5); }
+  .compare img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .compare__before { clip-path: inset(0 calc(100% - var(--x)) 0 0); filter: saturate(.85); }
+  .compare__line { position: absolute; top: 0; bottom: 0; left: var(--x); width: 3px; translate: -50% 0; background: #fff; box-shadow: 0 0 12px hsl(220 80% 8% / .4); pointer-events: none; }
+  .compare__knob { position: absolute; top: 50%; left: var(--x); translate: -50% -50%; width: 54px; height: 54px; border-radius: 50%;
+    background: #fff; color: var(--navy); display: grid; place-items: center; box-shadow: var(--sc-e3); pointer-events: none; }
+  .compare__knob svg { width: 26px; height: 26px; }
+  .compare__tag { position: absolute; top: 14px; font: 600 var(--sc-t-xs)/1 var(--sc-font-text); letter-spacing: .1em; text-transform: uppercase;
+    background: hsl(220 80% 8% / .72); color: #fff; padding: 8px 12px; border-radius: 999px; pointer-events: none; }
+  .compare__tag--b { left: 14px; } .compare__tag--a { right: 14px; background: var(--flame-ink); }
+  .compare input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .compare:has(input:focus-visible) { outline: 3px solid var(--flame); outline-offset: 4px; }
+  .gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: var(--sc-8); }
+  .gallery img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--sc-r-md); box-shadow: var(--sc-e1); }
+  .follow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sc-4); margin-top: var(--sc-5);
+    padding: var(--sc-5); border-radius: var(--sc-r-lg); background: #fff; border: 1px solid var(--line); }
+  .follow p { margin: 0; font-weight: 500; } .follow p small { display: block; color: var(--ink-dark-soft); font-weight: 400; }
+  .btn--fb { background: #1877F2; color: #fff; }
+  .btn--wa { background: #128C4A; color: #fff; }
+  .btn--wa:hover { background: #0E7A40; }
+  .btn--fb:hover { background: #0F63D0; }
+  @media (max-width: 900px) {
+    .ba { grid-template-columns: 1fr; gap: var(--sc-5); }
+    .ba__tabs { margin: var(--sc-5) 0 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+    .ba__tabs li { flex: none; }
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+    .gallery img:nth-child(n+7) { display: none; }
+  }
+
+  /* ---------- reviews ---------- */
+  .reviews__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--sc-5); margin-bottom: var(--sc-7); }
+  .score { display: flex; align-items: center; gap: var(--sc-4); text-decoration: none; padding: var(--sc-4) var(--sc-5); border-radius: var(--sc-r-lg);
+    background: #fff; border: 1px solid var(--line); box-shadow: var(--sc-e1); transition: transform var(--sc-d-fast) var(--sc-ease-out); }
+  .score:hover { transform: translateY(-2px); } .score:active { transform: translateY(0); }
+  .score:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+  .score b { font: 800 var(--sc-t-2xl)/1 var(--sc-font-display); letter-spacing: -0.03em; color: var(--navy); }
+  .score span { font-size: var(--sc-t-sm); line-height: 1.35; color: var(--ink-dark-soft); }
+  .score span strong { color: var(--ink-dark); display: block; }
+  .score svg { width: 34px; height: 34px; color: #1877F2; flex: none; }
+  .rev-wall { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--sc-5); align-items: start; }
+  .rev { margin: 0 0 var(--sc-5); padding: var(--sc-5); border-radius: var(--sc-r-lg); background: var(--paper); border: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: var(--sc-3); break-inside: avoid; }
+  .rev__tag { align-self: flex-start; font: 600 var(--sc-t-xs)/1 var(--sc-font-text); letter-spacing: .08em; text-transform: uppercase;
+    color: var(--navy-2); background: #fff; border: 1px solid var(--line); padding: 6px 9px; border-radius: 999px; }
+  .rev blockquote { margin: 0; font-size: var(--sc-t-sm); line-height: 1.6; color: var(--ink-dark); }
+  .rev figcaption { font-size: var(--sc-t-xs); color: var(--ink-dark-soft); }
+  .rev figcaption b { color: var(--ink-dark); font-weight: 600; font-size: var(--sc-t-sm); }
+  .rev--lead { position: sticky; top: calc(var(--bar-h) + 1.5rem); margin: 0; padding: var(--sc-7) var(--sc-6); background: var(--navy); border-color: var(--navy);
+    box-shadow: 0 2px 4px hsl(218 70% 12% / .12), 0 30px 60px -24px hsl(218 70% 12% / .5); }
+  .rev--lead .rev__tag { background: hsl(0 0% 100% / .1); border-color: hsl(0 0% 100% / .2); color: #fff; }
+  .rev--lead blockquote { font: 600 var(--sc-t-lg)/1.4 var(--sc-font-display); letter-spacing: -0.015em; color: #fff; }
+  .rev--lead figcaption, .rev--lead figcaption b { color: #C9D5EA; }
+  .rev--lead figcaption b { color: #fff; }
+  .rev-cols { columns: 2; column-gap: var(--sc-5); }
+  .rev-more { display: none; color: var(--navy); }
+  @media (max-width: 900px) {
+    .rev-wall { grid-template-columns: 1fr; }
+    .rev--lead { position: relative; top: 0; padding: var(--sc-6) var(--sc-5); }
+    .rev-cols { columns: 1; }
+    .rev-cols:not(.is-open) .rev:nth-child(n+5) { display: none; }
+    .rev-more { display: inline-flex; justify-self: start; }
+  }
+
+  /* ---------- areas ---------- */
+  .areas { display: grid; grid-template-columns: 1fr 1.5fr; gap: var(--sc-7); align-items: start; }
+  .towns { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .towns li { padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font-weight: 500; font-size: var(--sc-t-sm); }
+  .towns li.home { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .towns li.home::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--flame); margin-right: 8px; vertical-align: 1px; }
+  @media (max-width: 900px) { .areas { grid-template-columns: 1fr; gap: var(--sc-5); } }
+
+  /* ---------- contact ---------- */
+  .contact { background: radial-gradient(50rem 40rem at 90% 0%, #164A9E 0%, transparent 60%), var(--navy); }
+  .contact__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .contact .h2 { color: #fff; }
+  .lines { list-style: none; margin: var(--sc-7) 0 0; padding: 0; display: grid; gap: var(--sc-3); }
+  .lines a { display: flex; align-items: center; gap: var(--sc-4); padding: var(--sc-4); border-radius: var(--sc-r-md); text-decoration: none;
+    background: hsl(0 0% 100% / .06); border: 1px solid hsl(0 0% 100% / .12); transition: background-color var(--sc-d-fast), transform var(--sc-d-fast) var(--sc-ease-out); }
+  .lines a:hover { background: hsl(0 0% 100% / .11); } .lines a:active { transform: scale(0.99); }
+  .lines a:focus-visible { outline: 3px solid var(--flame); outline-offset: 2px; }
+  .lines svg { width: 24px; height: 24px; flex: none; color: #FF8A5C; }
+  .lines b { display: block; font: 700 var(--sc-t-lg)/1.15 var(--sc-font-display); letter-spacing: -0.01em; word-break: break-word; }
+  .lines small { color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
+  .lines .email { font-size: var(--sc-t-base); }
+  .form { background: #fff; color: var(--ink-dark); border-radius: var(--sc-r-lg); padding: var(--sc-6); box-shadow: var(--sc-e3); }
+  .form h3 { font: 800 var(--sc-t-xl)/1.05 var(--sc-font-display); letter-spacing: -0.02em; margin: 0 0 var(--sc-2); }
+  .form > p { margin: 0 0 var(--sc-5); color: var(--ink-dark-soft); font-size: var(--sc-t-sm); }
+  .field { display: grid; gap: 6px; margin-bottom: var(--sc-4); }
+  .field label { font-weight: 600; font-size: var(--sc-t-sm); }
+  .field input, .field select, .field textarea { font: inherit; font-size: 16px; color: var(--ink-dark); background: var(--paper); border: 1.5px solid var(--line);
+    border-radius: var(--sc-r-md); padding: 0.8em 0.9em; width: 100%; transition: border-color var(--sc-d-fast), background-color var(--sc-d-fast); }
+  .field input:hover, .field select:hover, .field textarea:hover { border-color: #B3C0D6; }
+  .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 3px solid color-mix(in oklab, var(--flame) 60%, transparent); outline-offset: 1px; border-color: var(--flame-ink); background: #fff; }
+  .field textarea { min-height: 7rem; resize: vertical; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sc-4); }
+  .form .btn { width: 100%; margin-top: var(--sc-2); }
+  .form__done { display: none; margin-top: var(--sc-4); padding: var(--sc-4); border-radius: var(--sc-r-md); background: #EAF4EC; color: #1C4D2A; font-size: var(--sc-t-sm); }
+  .form.is-sent .form__done { display: block; }
+  @media (max-width: 900px) { .contact__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 460px) { .row2 { grid-template-columns: 1fr; } .form { padding: var(--sc-5); } }
+
+  /* ---------- footer ---------- */
+  .foot { background: var(--navy-deep); color: var(--sc-ink-soft); padding-block: var(--sc-8) calc(var(--sc-7) + 70px); font-size: var(--sc-t-sm); }
+  .foot__in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--sc-6); align-items: flex-start; }
+  .foot img { height: 52px; width: auto; margin-bottom: var(--sc-4); }
+  .foot nav { display: grid; gap: 10px; }
+  .foot a { text-decoration: none; } .foot a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  .foot a:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
+  .foot__small { margin-top: var(--sc-7); padding-top: var(--sc-5); border-top: 1px solid hsl(0 0% 100% / .1); font-size: var(--sc-t-xs); }
+  @media (min-width: 761px) { .foot { padding-bottom: var(--sc-7); } }
+
+  /* ---------- phone call bar ---------- */
+  .callbar { position: fixed; z-index: 70; left: 0; right: 0; bottom: 0; display: none; gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: color-mix(in oklab, #fff 96%, transparent);
+    backdrop-filter: blur(10px); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px -12px hsl(218 70% 12% / .3); }
+  .callbar .btn { flex: 1; padding: 0.9em 0.6em; }
+  .callbar .btn--ghost { color: var(--navy); }
+  @media (max-width: 760px) { .callbar { display: flex; } }
+
+  /* ---------- reduced motion: complete static composition, no pinned travel ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .hero, .job { height: auto !important; }
+    .hero [data-sc-stage] { position: relative; }
+    .hero { --open: 0; --late: 0; }
+    .job { --sc-p: 1 !important; }
+    .job [data-sc-stage] { position: relative; height: auto; min-height: 100svh; }
+    .ticket li small { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo" role="note"><b>Concept demo by Clockwork AI.</b> Not the official website of No Leaks Plumbing &amp; Heating Services.</div>
+
+<header class="bar">
+  <div class="sc-wrap bar__in">
+    <a class="bar__logo" href="#top" aria-label="No Leaks Plumbing and Heating Services, home">
+      <img src="assets/logo-noleaks.png" alt="No Leaks Plumbing &amp; Heating Services" width="1036" height="289">
+    </a>
+    <nav class="bar__nav" aria-label="Main">
+      <a href="#bathrooms">Bathrooms</a>
+      <a href="#services">Services</a>
+      <a href="#work">Before and after</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--flame bar__call" href="tel:+447538951971">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      07538 951971
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu__top">
+    <img src="assets/logo-noleaks-reverse.png" alt="No Leaks Plumbing &amp; Heating Services" width="1036" height="289">
+    <button class="menu__close" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Menu">
+    <a href="#bathrooms">Bathrooms</a>
+    <a href="#services">Services</a>
+    <a href="#work">Before and after</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#areas">Areas</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="menu__cta">
+    <a class="btn btn--flame" href="tel:+447538951971">Call 07538 951971</a>
+    <a class="btn btn--wa" href="https://wa.me/447538951971?text=Hi%20Jonny%2C%20I%20found%20you%20online.%20I%27m%20after%20a%20quote%20for%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>WhatsApp Jonny</a>
+    <a class="btn btn--white" href="#contact">Get a quote</a>
+    <a class="btn btn--ghost" href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener">See his work on Facebook</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- 1 HERO: a navy plane with a round aperture opens onto one of Jonny's finished bathrooms -->
+  <section class="hero" data-sc-act="pin" data-sc-span="2.3" aria-labelledby="hero-h">
+    <div data-sc-stage>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__room">
+        <picture>
+          <source media="(min-width: 761px)" srcset="assets/bath-freestanding-wide.webp" width="1200" height="900">
+          <img src="assets/bath-led-mirror.webp" width="1200" height="1600" alt="A finished bathroom by Jonny with a round backlit mirror, wood-effect units and brushed brass fittings" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="hero__rim" aria-hidden="true"></div>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__copy">
+        <h1 id="hero-h">Bathrooms, boilers and heating. <em>Done properly.</em></h1>
+        <p>Gas Safe plumber in Worsley. I take on the whole job, every trade included.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--flame" href="tel:+447538951971">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Call Jonny
+          </a>
+          <a class="btn btn--wa" href="https://wa.me/447538951971?text=Hi%20Jonny%2C%20I%20found%20you%20online.%20I%27m%20after%20a%20quote%20for%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>WhatsApp</a>
+          <a class="btn btn--ghost" href="#contact">Get a quote</a>
+        </div>
+      </div>
+      <div class="hero__second">
+        <p>One call. Every trade. One price.</p>
+        <span>Plumbing, boarding, plastering and tiling, all booked and managed by Jonny.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- trust strip -->
+  <section class="trust ground-white" aria-label="Why people use No Leaks">
+    <div class="sc-wrap trust__in">
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+        <span><b>Gas Safe registered</b><small>Domestic gas work done legally</small></span>
+      </div>
+      <a class="trust__item" href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.1l-5.9 3.1 1.2-6.5L2.5 9.1l6.6-.9z"/></svg>
+        <span><b>90% recommend</b><small>44 reviews on Facebook</small></span>
+      </a>
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span><b>Based in Worsley</b><small>Covering Greater Manchester</small></span>
+      </div>
+      <div class="trust__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5V5h6V3.5M8.5 11l2 2 4-4M8.5 17h7"/></svg>
+        <span><b>One price, whole job</b><small>Every trade sorted for you</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 SERVICES -->
+  <section id="services" class="sc-section ground-light" aria-labelledby="svc-h">
+    <div class="sc-wrap">
+      <div class="services__head" data-sc-in>
+        <div>
+          <p class="eyebrow">What I do</p>
+          <h2 class="h2" id="svc-h">From a dripping tap to a brand new bathroom.</h2>
+        </div>
+        <p class="lede">Fully qualified plumber and Gas Safe registered engineer. Bathrooms designed and fitted, boilers replaced and serviced, and all your general plumbing, heating and gas work.</p>
+      </div>
+      <div class="svc-grid" data-sc-stagger="70" data-sc-in>
+        <article class="feature" id="bathrooms-card">
+          <img src="assets/jobe-after.webp" width="1200" height="1600" loading="lazy" style="object-position: 50% 62%" alt="A finished bathroom by Jonny with a freestanding bath, sage green vanity, round mirror and walk-in shower">
+          <div class="feature__body">
+            <h3>Bathrooms, start to finish</h3>
+            <p>Designed with you, priced as one job, fitted properly. I bring in the boarders, plasterers and tilers and manage the lot, so you deal with one person.</p>
+            <ul class="chips" aria-label="Included in a full bathroom job">
+              <li>Design</li><li>Strip-out</li><li>Plumbing</li><li>Boarding and plastering</li><li>Tiling</li><li>Fit-out</li>
+            </ul>
+            <a class="btn btn--flame" href="#bathrooms">See a job start to finish</a>
+          </div>
+        </article>
+        <div class="svc-side">
+          <article class="boiler">
+            <img src="assets/boiler-combi-sm.webp" width="540" height="720" loading="lazy" alt="A new combi boiler fitted by Jonny with neat copper pipework below it">
+            <div class="boiler__body">
+              <h3>Boiler replacements</h3>
+              <p>Old boiler out, new one in, neat pipework, flue and controls sorted. Gas Safe registered.</p>
+              <blockquote>"25 year old floor-standing boiler out, Baxi 830 fitted, 3.6 m flue run through void, access panels fitted."<cite>Jonny, on a recent job</cite></blockquote>
+            </div>
+          </article>
+          <ul class="svc-list">
+            <li><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 0 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>Boiler servicing</h3><p>Yearly service to keep it safe, efficient and in warranty.</p></li>
+            <li><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M11 5v14M15 5v14M19 5v14"/></svg>Central heating</h3><p>Full systems, radiators, controls and power flushing.</p></li>
+            <li><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s6 6.6 6 11.3a6 6 0 0 1-12 0c0-4.7 6-11.3 6-11.3z"/></svg>General plumbing</h3><p>Leaks, taps, toilets, showers and pipework.</p></li>
+            <li><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-2.7 7-7 0-3.5-2.5-6.2-4-8-1 2-2 3-3.5 3.5C12 8 11 5 8.5 2 8.6 6 5 9 5 15c0 4.3 3 7 7 7z"/></svg>Domestic gas work</h3><p>Hobs, fires and gas pipework by a registered engineer.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 PEAK: the job ticket, on Job B's real photos -->
+  <section id="bathrooms" class="job" data-sc-act="pin" data-sc-span="4.2" aria-labelledby="job-h">
+    <div data-sc-stage>
+      <div class="sc-wrap job__grid">
+        <div class="job__photos">
+          <figure style="--t:0"><img src="assets/jobb-before.webp" width="1200" height="1600" alt="The bathroom before: white tiles, an electric shower over the bath"><figcaption>Before</figcaption></figure>
+          <figure style="--t:.2"><img src="assets/jobb-studs.webp" width="1500" height="1125" alt="The same bathroom stripped back to bare stud walls" loading="lazy"><figcaption>Stripped to the studs</figcaption></figure>
+          <figure style="--t:.38"><img src="assets/jobb-insulated.webp" width="1500" height="1125" alt="New studwork with insulation fitted between the timbers" loading="lazy"><figcaption>First fix and insulation</figcaption></figure>
+          <figure style="--t:.56"><img src="assets/jobb-boarded.webp" width="1500" height="1125" alt="Walls boarded and ready for tiling" loading="lazy"><figcaption>Boarded</figcaption></figure>
+          <figure style="--t:.74"><img src="assets/jobb-finished.webp" width="1200" height="1600" alt="The finished bathroom: large grey tiles, a bath with shower, a wall-hung vanity and an LED mirror" loading="lazy"><figcaption>Finished</figcaption></figure>
+        </div>
+        <div>
+          <div class="job__intro">
+            <h2 class="h2" id="job-h">Watch a bathroom come together.</h2>
+            <p>Real photos from one of Jonny's full-works bathrooms.</p>
+          </div>
+          <div class="ticket" role="group" aria-label="Job ticket">
+            <div class="ticket__head"><h2 aria-hidden="true">Full-works bathroom</h2><span>Job ticket</span></div>
+            <ol>
+              <li style="--t:0"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Survey and one price</b><small>Design talked through, every trade costed in. <i>Jonny</i></small></li>
+              <li style="--t:.2"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Strip-out</b><small>Old suite and tiles out, back to the studs. <i>Jonny</i></small></li>
+              <li style="--t:.38"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>First fix plumbing</b><small>New pipework where the new room needs it. <i>Jonny</i></small></li>
+              <li style="--t:.56"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Boarding and plastering</b><small>Walls boarded and made good. <i>Booked and managed by Jonny</i></small></li>
+              <li style="--t:.74"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><b>Tiling, fit-out and handover</b><small>Tiler booked in, suite fitted, tested and tidied. <i>Jonny</i></small></li>
+            </ol>
+            <div class="ticket__foot">
+              <p>One contact the whole way<b>Jonny, 07538 951971</b></p>
+              <a class="btn btn--flame" href="tel:+447538951971">Call Jonny</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 BEFORE AND AFTER -->
+  <section id="work" class="sc-section ground-light" aria-labelledby="ba-h">
+    <div class="sc-wrap">
+      <div class="ba">
+        <div data-sc-in>
+          <h2 class="h2" id="ba-h">Before and after.</h2>
+          <p class="lede">Drag across the photo. Same room, before Jonny started and after he finished.</p>
+          <ul class="ba__tabs" aria-label="Choose a bathroom">
+            <li><button type="button" aria-pressed="true" data-before="joba-before" data-after="bath-freestanding" data-label="Freestanding bath and walk-in shower">Freestanding bath</button></li>
+            <li><button type="button" aria-pressed="false" data-before="jobd-before" data-after="jobd-after" data-label="Marble-effect tiles and a black framed shower">Marble and black</button></li>
+            <li><button type="button" aria-pressed="false" data-before="jobf-before" data-after="jobf-after" data-label="Loft bathroom with brass and herringbone">Loft bathroom</button></li>
+            <li><button type="button" aria-pressed="false" data-before="jobe-before" data-after="jobe-after" data-label="Sage vanity and freestanding bath">Sage and oak</button></li>
+            <li><button type="button" aria-pressed="false" data-before="jobg-before" data-after="jobg-after" data-label="Green herringbone walk-in shower">Green herringbone</button></li>
+          </ul>
+          <p class="ba__note" id="ba-label" aria-live="polite">Freestanding bath and walk-in shower</p>
+        </div>
+        <div class="compare" id="compare">
+          <img class="compare__after" src="assets/bath-freestanding.webp" width="1200" height="1600" alt="After: the finished bathroom" loading="lazy">
+          <img class="compare__before" src="assets/joba-before.webp" width="1200" height="1600" alt="Before: the same bathroom before the work" loading="lazy">
+          <span class="compare__line" aria-hidden="true"></span>
+          <span class="compare__knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+          <span class="compare__tag compare__tag--b" aria-hidden="true">Before</span>
+          <span class="compare__tag compare__tag--a" aria-hidden="true">After</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Slide to compare before and after">
+        </div>
+      </div>
+
+      <div class="gallery" data-sc-stagger="50" data-sc-in>
+        <img src="assets/jobd-shower-sm.webp" width="540" height="720" loading="lazy" alt="Walk-in shower with black framed glass and marble-effect tiles">
+        <img src="assets/jobf-shower-sm.webp" width="540" height="720" loading="lazy" alt="Herringbone tiled shower with an exposed brass shower">
+        <img src="assets/jobg-shower-sm.webp" width="540" height="720" loading="lazy" alt="Dark green herringbone walk-in shower">
+        <img src="assets/jobe-shower-sm.webp" width="540" height="720" loading="lazy" alt="Walk-in shower and freestanding bath with brass fittings">
+        <img src="assets/jobf-bath-sm.webp" width="540" height="720" loading="lazy" alt="Loft bathroom bath with herringbone tiled niche">
+        <img src="assets/jobb-after-2-sm.webp" width="540" height="720" loading="lazy" alt="Finished bathroom with large grey tiles and a fluted storage unit">
+      </div>
+      <div class="follow">
+        <p>More of Jonny's jobs, posted as he finishes them<small>1.2K followers on Facebook</small></p>
+        <a class="btn btn--fb" href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>
+          Follow on Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 REVIEWS -->
+  <section id="reviews" class="sc-section ground-white" aria-labelledby="rev-h">
+    <div class="sc-wrap">
+      <div class="reviews__head" data-sc-in>
+        <div>
+          <h2 class="h2" id="rev-h">What customers say.</h2>
+          <p class="lede">Word for word from his Facebook page.</p>
+        </div>
+        <a class="score" href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-1.6 19.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/></svg>
+          <b>90%</b>
+          <span><strong>recommend No Leaks</strong>Read all 44 reviews on Facebook</span>
+        </a>
+      </div>
+      <div class="rev-wall">
+        <figure class="rev rev--lead" data-sc-in><span class="rev__tag">Bathroom</span>
+          <blockquote>“I think the photos speak for themselves, what a transformation 🤩 Jonny was quick to respond to my requests and confident that he could make our dream bathroom happen. Jonny and his team were hardworking, reliable polite and trustworthy throughout. We’d really recommend them to anyone considering a new bathroom. Thanks again Jonny!”</blockquote>
+          <figcaption><b>Caroline S.</b> · Facebook review, Sep 2025</figcaption></figure>
+        <div class="rev-cols" id="rev-cols" data-sc-stagger="50" data-sc-in>
+        <figure class="rev"><span class="rev__tag">Boiler</span>
+          <blockquote>“Needed a boiler replacement and Jonny was recommended. Gave a massively fair quote, kept in touch with me every step of the way, arrived when he said he would and went above and beyond. Did a top job!”</blockquote>
+          <figcaption><b>Tyler W.</b> · Facebook review, Sep 2026</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Bathroom</span>
+          <blockquote>“Absolutely fantastic from the main man himself jonny so happy with bathroom the bathroom looks stunning all high quality fittings full rip out and brand new bathroom fitted . i would recommend 100% thank you again next job new boiler next year :)”</blockquote>
+          <figcaption><b>Dave G.</b> · Facebook review, Nov 2025</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Repair</span>
+          <blockquote>“messaged Jonny as we suddenly had no water from hot taps. He came round same day and sorted it. what a lovely lad, professional, friendly and wont rip you off. definitely recommend to anyone.”</blockquote>
+          <figcaption><b>Paula B.</b> · Facebook review, Dec 2025</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Bathroom</span>
+          <blockquote>“When looking for a bathroom fitter/designer I messaged a few individuals, Jonny being the most punctual and friendliest in helping coming up with a design I decided to go ahead with himself and team. This was a good decision as the works and finishes were done to a quality standard and most importantly on time. Having had the bathroom now for a few weeks there has been no issues and no snagging work required as all left to a high standard. Would highly recommend.”</blockquote>
+          <figcaption><b>Harry H.</b> · Facebook review, Aug 2023</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Boiler</span>
+          <blockquote>“Great service, from my first message, new boiler installed within a week. Massive thanks Jonny, I would highly recommend you. Many thanks Sarah and Joyce.”</blockquote>
+          <figcaption><b>Sarah D.</b> · Facebook review, Dec 2025</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Bathroom</span>
+          <blockquote>“I would highly recommend No Leaks plumbing and heating. We had a full bathroom refit and tiled throughout. Jonny and his team did a fantastic job. Thank you again Jonny”</blockquote>
+          <figcaption><b>Karl V.</b> · Facebook review, Oct 2024</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Gas</span>
+          <blockquote>“Had a little gas leak emergency! Was with me within a few hours at a weekend to sort out the issue. Perfect service. Thanks ☺️”</blockquote>
+          <figcaption><b>Philippa S.</b> · Facebook review, Jan 2026</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Bathroom</span>
+          <blockquote>“We would like to thank Jonny and Sam and the team for the amazing job they have done transforming our toilet and bathroom. We were listened to and checked in with regularly that we were happy with the work. Everyone had a positive attitude throughout and any small issues encountered were sorted as promised. We would definitely recommend Jonny for any bathroom refurbishment or plumbing work :-)”</blockquote>
+          <figcaption><b>Kelly B.</b> · Facebook review, Mar 2024</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Bathroom</span>
+          <blockquote>“Cannot fault these lads. Excellent service from start to finish. Timing, communication and updates were fantastic. Very reasonably priced. Would highly recommend.”</blockquote>
+          <figcaption><b>Deb P.</b> · Facebook review, Apr 2024</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Boiler</span>
+          <blockquote>“Johny and Sam recently installed a new boiler and I couldn't thank them enough. Extremely professional and polite. Excellent value for money.”</blockquote>
+          <figcaption><b>Lucy C.</b> · Facebook review, Feb 2024</figcaption></figure>
+        <figure class="rev"><span class="rev__tag">Bathroom</span>
+          <blockquote>“Highly recommend No Leaks Plumbing and Heating Services. I've just had my bathroom refurbished and I'm absolutely thrilled with the result! Reliable, helpful and completed the work to a high standard. Thank you!”</blockquote>
+          <figcaption><b>Danny W.</b> · Facebook review, Jun 2025</figcaption></figure>
+        </div>
+        <button class="btn btn--ghost rev-more" type="button" aria-controls="rev-cols" aria-expanded="false">Show all 12 reviews</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 AREAS -->
+  <section id="areas" class="sc-section ground-light" aria-labelledby="areas-h">
+    <div class="sc-wrap areas" data-sc-in>
+      <div>
+        <h2 class="h2 h2--md" id="areas-h">Based in Worsley. Working right across Greater Manchester.</h2>
+        <p class="lede">Not on the list? Ring anyway. If it's nearby, I'll come out.</p>
+      </div>
+      <ul class="towns" aria-label="Areas covered">
+        <li class="home">Worsley</li><li>Walkden</li><li>Boothstown</li><li>Little Hulton</li><li>Swinton</li><li>Eccles</li><li>Monton</li><li>Pendlebury</li>
+        <li>Irlam</li><li>Cadishead</li><li>Astley</li><li>Tyldesley</li><li>Leigh</li><li>Farnworth</li><li>Urmston</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7 CONTACT -->
+  <section id="contact" class="sc-section contact" aria-labelledby="contact-h">
+    <div class="sc-wrap contact__grid">
+      <div data-sc-in>
+        <h2 class="h2" id="contact-h">Tell me about the job.</h2>
+        <p class="lede">Ring, email, or send a few details and I'll get back to you with a price.</p>
+        <ul class="lines">
+          <li><a href="tel:+447538951971"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><b>07538 951971</b><small>Tap to call Jonny</small></span></a></li>
+          <li><a href="https://wa.me/447538951971?text=Hi%20Jonny%2C%20I%20found%20you%20online.%20I%27m%20after%20a%20quote%20for%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg><span><b>WhatsApp Jonny</b><small>Send a message and a few photos of the job</small></span></a></li>
+          <li><a href="mailto:noleaksplumbingandheating@outlook.com?subject=Quote%20request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 7 9-7"/></svg><span><b class="email">noleaksplumbingandheating@outlook.com</b><small>Tap to email, photos welcome</small></span></a></li>
+          <li><a href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-1.6 19.9V14.9H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/></svg><span><b>No Leaks on Facebook</b><small>Message, or see recent jobs</small></span></a></li>
+        </ul>
+      </div>
+      <form class="form" id="quote" novalidate method="post" action="#" data-sc-in>
+        <h3>Get a quote</h3>
+        <p>Takes a minute. Jonny will be in touch.</p>
+        <div class="row2">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="f-post">Postcode</label><input id="f-post" name="postcode" autocomplete="postal-code" required></div>
+          <div class="field"><label for="f-job">Job</label>
+            <select id="f-job" name="job"><option>New bathroom</option><option>Boiler replacement</option><option>Boiler service</option><option>Central heating</option><option>Plumbing repair</option><option>Something else</option></select></div>
+        </div>
+        <div class="field"><label for="f-msg">A few details</label><textarea id="f-msg" name="message" placeholder="What needs doing, and roughly when?"></textarea></div>
+        <button class="btn btn--flame" type="submit">Get a quote</button>
+        <p class="form__done" role="status">Demo only: nothing was sent. On the live site this goes straight to Jonny's inbox.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="sc-wrap">
+    <div class="foot__in">
+      <div>
+        <img src="assets/logo-noleaks-reverse.png" alt="No Leaks Plumbing &amp; Heating Services" width="1036" height="289" loading="lazy">
+        <p>Plumbing, heating, boilers and bathrooms.<br>Worsley and Greater Manchester.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="tel:+447538951971">07538 951971</a>
+        <a href="https://wa.me/447538951971?text=Hi%20Jonny%2C%20I%20found%20you%20online.%20I%27m%20after%20a%20quote%20for%3A%20" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:noleaksplumbingandheating@outlook.com">noleaksplumbingandheating@outlook.com</a>
+        <a href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener" aria-label="No Leaks on Facebook (opens in a new tab)">Facebook</a>
+      </nav>
+      <a class="btn btn--fb" href="https://www.facebook.com/p/No-leaks-plumbing-and-heating-services-100034855281160/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>
+        Follow on Facebook
+      </a>
+    </div>
+    <p class="foot__small">Concept demo by Clockwork AI. Not the official website of No Leaks Plumbing &amp; Heating Services.</p>
+  </div>
+</footer>
+
+<nav class="callbar" aria-label="Quick contact">
+  <a class="btn btn--flame" href="tel:+447538951971">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    Call Jonny
+  </a>
+  <a class="btn btn--wa" href="https://wa.me/447538951971?text=Hi%20Jonny%2C%20I%20found%20you%20online.%20I%27m%20after%20a%20quote%20for%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3z"/></svg>WhatsApp</a>
+</nav>
+
+<script src="scrollcraft.js"></script>
+<script>
+ScrollCraft.mount(document.body);
+
+// phone menu: opens full screen, closes on the button, a link or Escape, locks page scroll
+(function () {
+  var menu = document.getElementById('menu'), openBtn = document.querySelector('.menu-btn'), closeBtn = menu.querySelector('.menu__close');
+  function set(open) {
+    if (open) menu.hidden = false;
+    requestAnimationFrame(function () { menu.classList.toggle('is-open', open); });
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) closeBtn.focus(); else { openBtn.focus(); setTimeout(function () { if (!menu.classList.contains('is-open')) menu.hidden = true; }, 260); }
+  }
+  openBtn.addEventListener('click', function () { set(true); });
+  closeBtn.addEventListener('click', function () { set(false); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('is-open')) set(false); });
+})();
+
+// job ticket: mark the current step so phones can show its line
+(function () {
+  var act = document.querySelector('.job'), rows = act.querySelectorAll('.ticket li'), last = -1;
+  var ts = Array.prototype.map.call(rows, function (r) { return parseFloat(r.style.getPropertyValue('--t')) || 0; });
+  (function tick() {
+    var p = parseFloat(act.style.getPropertyValue('--sc-p')) || 0, k = 0;
+    for (var i = 0; i < ts.length; i++) if (p >= ts[i]) k = i;
+    if (k !== last) { rows.forEach(function (r, i) { r.classList.toggle('is-now', i === k); }); last = k; }
+    requestAnimationFrame(tick);
+  })();
+})();
+
+// before and after: range input drives the wipe, tabs swap the room
+(function () {
+  var box = document.getElementById('compare'), range = box.querySelector('input'), before = box.querySelector('.compare__before'),
+      after = box.querySelector('.compare__after'), label = document.getElementById('ba-label');
+  function setX(v) { box.style.setProperty('--x', v + '%'); }
+  range.addEventListener('input', function () { setX(range.value); });
+  document.querySelectorAll('.ba__tabs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.ba__tabs button').forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      before.src = 'assets/' + b.dataset.before + '.webp'; after.src = 'assets/' + b.dataset.after + '.webp';
+      label.textContent = b.dataset.label; range.value = 50; setX(50);
+    });
+  });
+})();
+
+// reviews: phones show four, the button opens the rest
+(function () {
+  var btn = document.querySelector('.rev-more'), cols = document.getElementById('rev-cols');
+  btn.addEventListener('click', function () {
+    var open = cols.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open)); btn.textContent = open ? 'Show fewer reviews' : 'Show all 12 reviews';
+  });
+})();
+
+// quote form: demo only, says so plainly
+document.getElementById('quote').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.currentTarget, missing = Array.prototype.filter.call(f.querySelectorAll('[required]'), function (i) { return !i.value.trim(); });
+  if (missing.length) { missing[0].focus(); missing[0].setAttribute('aria-invalid', 'true'); return; }
+  f.classList.add('is-sent');
+});
+</script>
+</body>
+</html>
